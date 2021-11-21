@@ -1,0 +1,23 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Select Form to View
+    link(rel='stylesheet' href='css/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet' href='css/NewFormSelection.css')
+    script(src='js/jquery/dist/jquery.js')
+    script(src='css/bootstrap/dist/js/bootstrap.bundle.js')
+.container.choose-action-container
+    .row
+        button.btn.btn-lg.btn-primary.action-button(type='button' onclick="window.location.href='../Forms/MinorInjuryLog.html'") Minor Injury Log
+    .row
+        button.btn.btn-lg.btn-primary.action-button(type='button' onclick="window.location.href='../Forms/PDRMA_Form_01_Accident_Incident_Report.html'") PDRMA Form 01
+    .row
+        button.btn.btn-lg.btn-primary.action-button(type='button') PDRMA Form 02
+    .row
+        button.btn.btn-lg.btn-primary.action-button(type='button') PDRMA Form 03
+    .row
+        form.d-flex.justify-content-center(action='ViewForms04' method='get')
+            button.btn.btn-lg.btn-primary.action-button(type='submit' id='04' value='04') PDRMA Form 04
+    .row
+        form.d-flex.justify-content-center(action='ViewForms04E' method='get')
+            button.btn.btn-lg.btn-primary.action-button(type='submit' id='04E' value='04E') PDRMA Form 04E

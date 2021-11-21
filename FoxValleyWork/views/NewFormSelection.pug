@@ -1,0 +1,26 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title New Form Selection
+    link(rel='stylesheet' href='css/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet' href='css/NewFormSelection.css')
+    script(src='js/jquery/dist/jquery.js')
+    script(src='css/bootstrap/dist/js/bootstrap.bundle.js')
+.container.choose-action-container
+    .row
+        form.d-flex.justify-content-center(action='completeMinorInjuryLog' method='get')
+            button.btn.btn-lg.btn-primary.action-button(type='submit' ) Minor Injury Log
+    .row
+        button.btn.btn-lg.btn-primary.action-button(type='button' onclick="window.location.href='../Forms/PDRMA_Form_01_Accident_Incident_Report.html'") PDRMA Form 01
+    .row
+        form.d-flex.justify-content-center(action='completeForm02' method='get')
+            button.btn.btn-lg.btn-primary.action-button(type='submit' ) PDRMA Form 02
+    .row
+        form.d-flex.justify-content-center(action='completeForm03' method='get')
+            button.btn.btn-lg.btn-primary.action-button(type='submit' ) PDRMA Form 03
+    .row
+        form.d-flex.justify-content-center(action='completeForm04' method='get')
+            button.btn.btn-lg.btn-primary.action-button(type='submit' ) PDRMA Form 04
+    .row
+        form.d-flex.justify-content-center(action='completeForm04E' method='get')
+            button.btn.btn-lg.btn-primary.action-button(type='submit' ) PDRMA Form 04E

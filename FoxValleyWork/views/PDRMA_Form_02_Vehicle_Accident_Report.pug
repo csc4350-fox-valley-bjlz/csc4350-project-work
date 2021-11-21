@@ -1,0 +1,778 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Vehicle Accident Report
+  link(rel='stylesheet' href='css/bootstrap/dist/css/bootstrap.css')
+  link(rel='stylesheet' href='css/MinorInjuryLog.css')
+  // <script src="../jquery.min.js"></script>
+  // <script src="../bootstrap.bundle.min.js"></script>
+form#Vehicle-Accident-Report-form(action='')
+  .container.minor-injury-log-form-title
+    h1#minor-injury-log-form-title Vehicle Accident Report
+  br
+  .form-group
+    label(for='program-group-name') Agency name:
+    input#program-group-name.form-control(type='text' placeholder='Program/Group Name')
+  .row
+    .col
+      .form-group
+        label(for='program-leaders') Today&rsquo;s date
+        input#program-leaders.form-control(type='text' placeholder='Today’s date')
+    br
+    .col
+      .form-group
+        label(for='season-year')  Date of incident (mm/dd/yyyy) 
+        input#season-year.form-control(type='text' placeholder='Season/Year')
+  br
+  label(for='date-form-group') Date:
+  br
+  #date-form-group.form-group
+    .row
+      .col
+        label(for='incident-date-month') Month:
+        input#incident-date-month.form-control(type='text' placeholder='Month')
+      .col
+        label(for='incident-date-day') Day:
+        input#incident-date-day.form-control(type='text' placeholder='Day')
+      .col
+        label(for='incident-date-year') Year:
+        input#incident-date-year.form-control(type='text' placeholder='Year')
+  br
+  label(for='incident-time-form-group') Time:
+  br
+  #incident-time-form-group.form-group
+    .row
+      .col
+        label(for='incident-time-hour') Hour:
+        input#incident-time-hour.form-control(type='text' placeholder='Hour')
+      .col
+        label(for='incident-time-minute') Minute:
+        input#incident-time-minute.form-control(type='text' placeholder='Minute')
+      .col
+        label(for='incident-time-am-pm') AM/PM:
+        input#incident-time-am-pm.form-control(type='text' placeholder='AM or PM')
+  br
+  label(for='name-of-injured') Name of Injured:
+  #Name-of-person-completing-the-report .form-group
+    .row
+      .col
+        label(for='Title-of-person-completing-report') Title of person completing report
+        input#Title-of-person-completing-report.form-control(type='text' placeholder='Title of person completing report ')
+      .col
+        label(for='Hour') Hour:
+        input#Hour.form-control(type='text' placeholder='Hour')
+      .col
+        label(for='Minute') Minute:
+        input#Minute.form-control(type='text' placeholder='Minute')
+      .col
+        label(for='>AM/PM') AM/PM:
+        input.form-control(type='text' id='>AM/PM' placeholder='AM or PM')
+  br
+  .form-group
+    label(for='program-group-name') Business phone
+    input.form-control(type='text' id='Business phone' placeholder='Business phone')
+  .form-group
+    label(for='program-group-name')
+      | Business email
+    input.form-control(type='text' id='Business email' placeholder='Business email')
+  br
+  #name-of-injured.form-group
+    .row
+      .col
+        label(for='name-of-injured-firstname') First Name:
+        input#name-of-injured-firstname.form-control(type='text' placeholder='First Name')
+      .col
+        label(for='name-of-injured-lastname') Last Name:
+        input#name-of-injured-lastname.form-control(type='text' placeholder='Last Name')
+  br
+  label(for='injury-location') Injury Location:
+  br
+  #injury-location.form-group
+    label(for='injury-location-entry') Location:
+    input#injury-location-entry.form-control(type='text' placeholder='Location')
+    br
+    input#Off_Location(type='radio' name='fav_language' value='Offsite (non-agency owned)')
+    label(for='html') Offsite (non-agency owned)
+    br
+    input#On_Location(type='radio' name='fav_language' value='Offsite (non-agency owned)')
+    label(for='html') On agency property)
+    br
+    |     Primary location:
+    br
+    input#html1(type='radio' name='fav_language' value='Offsite (non-agency owned)')
+    label(for='html') Highway/roadway
+    br
+    input#html2(type='radio' name='fav_language' value='Offsite (non-agency owned)')
+    label(for='html') Parking lot
+    br
+    input#html3(type='radio' name='fav_language' value='Offsite (non-agency owned)')
+    label(for='html') Other
+    br
+  br
+  |   Was the agency vehicle occupied?
+  br
+  input#html4(type='radio' name='fav_language' value='Offsite (non-agency owned)')
+  label(for='html') Yes
+  br
+  input#html5(type='radio' name='fav_language' value='Offsite (non-agency owned)')
+  label(for='html') No
+  br
+  input#html6(type='radio' name='fav_language' value='Offsite (non-agency owned)')
+  label(for='html') Unknown
+  br
+  br
+  label(for='Agency driver last name') Agency driver last name:
+  input.form-control(type='text' id='Agency driver last name' placeholder='First name')
+  label(for='Firstname') First Name:
+  input#Firstname.form-control(type='text' placeholder='First name')
+  br
+  label(for='Address') Address:
+  input#Address1.form-control(type='text' placeholder='Address')
+  br
+  label(for='City') City:
+  input#City1.form-control(type='text' placeholder='City')
+  br
+  label(for='State') State:
+  input#State1.form-control(type='text' placeholder='State')
+  br
+  label(for='Zip code') Zip code:
+  input.form-control(type='text' id='Zip code' placeholder='Zip code')
+  br
+  label(for='Home phone #') Home phone #:
+  input.form-control(type='text' id='Home phone #' placeholder='Home phone #')
+  br
+  label(for='State') Work phone #:
+  input.form-control(type='text' id='Work phone #' placeholder='Work phone #')
+  br
+  label(for='State') Cell phone # :
+  input.form-control(type='text' id='Cell phone # ' placeholder='Cell phone # ')
+  br
+  label(for='Email') Email:
+  input#Email.form-control(type='text' placeholder='Email')
+  br
+  label(for='State') State:
+  input#State.form-control(type='text' placeholder='State')
+  br
+  |   Is this driver an employee?
+  br
+  input#html(type='radio' name='driver an employee' value='Yes')
+  label(for='html') Yes
+  br
+  input#html(type='radio' name='driver an employee' value='No')
+  label(for='html') No
+  br
+  input#html(type='radio' name='driver an employee' value='Unknown')
+  label(for='html') Unknown
+  br
+  |   If Yes, enter job title of employee
+  br
+  label(for='job title of employee') Job title of employee:
+  input.form-control(type='text' id='job title of employee' placeholder='job title of employee')
+  br
+  |   Identify the type of driver
+  br
+  input#html(type='radio' name='Full-time employee' value='Full-time employee')
+  label(for='html') Full-time employee
+  br
+  input#html(type='radio' name='Part-time employee' value='Part-time employee')
+  label(for='html') Part-time employee
+  br
+  input#html(type='radio' name='Seasonal employee' value='Seasonal employee')
+  label(for='html') Seasonal employee
+  br
+  input#html(type='radio' name='Intern' value='Intern')
+  label(for='html') Intern
+  br
+  input#html(type='radio' name='Volunteer' value='Volunteer')
+  label(for='html') Volunteer
+  br
+  input#html(type='radio' name='Non-agency employee' value='Non-agency employee')
+  label(for='html') Non-agency employee
+  br
+  input#html(type='radio' name='Spouse/family member ' value='Spouse/family member')
+  label(for='html') Spouse/family member 
+  br
+  |   Agency vehicle VIN
+  br
+  label(for='Agency vehicle VIN') Agency vehicle VIN:
+  input.form-control(type='text' id='Agency vehicle VIN' placeholder='Agency vehicle VIN')
+  br
+  label(for='Make') Make:
+  input#Make.form-control(type='text' placeholder='Make')
+  br
+  label(for='Model') Model:
+  input#Model.form-control(type='text' placeholder='Model')
+  br
+  label(for='License number') License number:
+  input.form-control(type='text' id='License number' placeholder='License number')
+  br
+  |   Is vehicle drivable?
+  br
+  input#html(type='radio' name='driver an employee' value='Yes')
+  label(for='html') Yes
+  br
+  input#html(type='radio' name='driver an employee' value='No')
+  label(for='html') No
+  br
+  input#html(type='radio' name='driver an employee' value='Unknown')
+  label(for='html') Unknown
+  br
+  |   If no, provide current location of vehicle
+  br
+  label(for='job title of employee') current location of vehicle:
+  input.form-control(type='text' id='current location of vehicle' placeholder='current location of vehicle')
+  br
+  |   Area of damage
+  br
+  label(for='Area of damage') Area of damage:
+  input.form-control(type='text' id='Area of damage' placeholder='Area of damage')
+  br
+  |   Estimated repair cost
+  br
+  label(for='Estimated repair cost') Estimated repair cost:
+  input.form-control(type='text' id='Estimated repair cost' placeholder='Estimated repair cost')
+  br
+  |   Was a trailer involved?
+  br
+  input#html(type='radio' name='trailer involved' value='Yes')
+  label(for='html') Yes
+  br
+  input#html(type='radio' name='trailer involved' value='No')
+  label(for='html') No
+  br
+  input#html(type='radio' name='trailer involved' value='Unknown')
+  label(for='html') Unknown
+  br
+  |   If yes, provide the following information.
+  br
+  label(for='trailer involved') trailer involved:
+  input.form-control(type='text' id='trailer involved' placeholder='trailer involved')
+  br
+  label(for='Trailer year') Trailer year:
+  input.form-control(type='text' id='Trailer year' placeholder='Trailer year')
+  br
+  label(for='Make') Make:
+  input#Make.form-control(type='text' placeholder='Make')
+  br
+  label(for='Model') Model:
+  input#Model.form-control(type='text' placeholder='Model')
+  br
+  label(for='License number') License number:
+  input.form-control(type='text' id='License number' placeholder='License number')
+  br
+  |   Trailer area of damage
+  br
+  label(for='License number') License number:
+  input.form-control(type='text' id='License number' placeholder='License number')
+  br
+  label(for='location of trailer') Current location of trailer:
+  input.form-control(type='text' id='location of trailer' placeholder='location of trailer')
+  br
+  |   Trailer area of damage
+  br
+  label(for='area of damage') area of damage:
+  input.form-control(type='text' id='area of damage' placeholder='area of damage')
+  br
+  |   Estimated repair cost of trailer
+  br
+  label(for='cost of trailer') cost of trailer:
+  input.form-control(type='text' id='cost of trailer' placeholder='cost of trailer')
+  br
+  |   Has a police agency conducted an investigation?
+  br
+  input#html(type='radio' name='trailer involved' value='Yes')
+  label(for='html') Yes
+  br
+  input#html(type='radio' name='trailer involved' value='No')
+  label(for='html') No
+  br
+  |   If yes, provide the following information.
+  |   What police agency investigated the incident?
+  br
+  label(for='conducted an investigation') conducted an investigation:
+  input.form-control(type='text' id='conducted an investigation' placeholder='conducted an investigation')
+  br
+  |   Police report number
+  label(for='conducted an investigation') conducted an investigation:
+  input.form-control(type='text' id='conducted an investigation' placeholder='conducted an investigation')
+  br
+  |   Was the agency driver ticketed, arrested or cited for violation(s)?
+  br
+  input#html(type='radio' name='driver an employee' value='Yes')
+  label(for='html') Yes
+  br
+  input#html(type='radio' name='driver an employee' value='No')
+  label(for='html') No
+  br
+  input#html(type='radio' name='driver an employee' value='Unknown')
+  label(for='html') Unknown
+  br
+  br
+  label(for='details of the ticket, arrest or violation(s)')  If yes, provide details of the ticket, arrest or violation(s):
+  input.form-control(type='text' id='details of the ticket, arrest or violation(s)' placeholder='details of the ticket, arrest or violation(s)')
+  br
+  |   CLAIMANT INFORMATION
+  br
+  |   Identify other people involved in the accident. (Make additional copies of this section if needed.)
+  |   How was the person involved in the accident? (Check all that apply.)
+  br
+  input(type='checkbox' id='Driver of other vehicle' name='Driver of other vehicle' value='Driver of other vehicle')
+  label(for='Driver of other vehicle')  Driver of other vehicle
+  br
+  input(type='checkbox' id='Owner of other vehicle' name='Owner of other vehicle' value='Owner of other vehicle')
+  label(for='Owner of other vehicle')  Owner of other vehicle
+  br
+  input#Pedestrian(type='checkbox' name='Pedestrian' value='Pedestrian')
+  label(for='Pedestrian') Pedestrian
+  br
+  input(type='checkbox' id='Injured person' name='Injured person' value='Injured person')
+  label(for='Injured person')  Injured person
+  br
+  input(type='checkbox' id='Passenger of agency vehicle' name='Passenger of agency vehicle' value='Passenger of agency vehicle')
+  label(for='Passenger of agency vehicle')  Passenger of agency vehicle
+  br
+  input(type='checkbox' id='Owner of involved property' name='Owner of involved property' value='Owner of involved property')
+  label(for='Owner of involved property')  Owner of involved property
+  br
+  input(type='checkbox' id='Passenger of other vehicle' name='Passenger of other vehicle' value='Passenger of other vehicle')
+  label(for='Passenger of other vehicle')  Passenger of other vehicle
+  br
+  |   Last name or business name
+  br
+  label(for='Last name or business name') First Name:
+  input.form-control(type='text' id='Last name or business name' placeholder='Last name or business name')
+  label(for='First name (not necessary for business)') First name (not necessary for business):
+  input.form-control(type='text' id='First name (not necessary for business)' placeholder='First name (not necessary for business)')
+  br
+  label(for='Address') Address:
+  input#Address.form-control(type='text' placeholder='Address')
+  br
+  label(for='City') City:
+  input#City.form-control(type='text' placeholder='City')
+  br
+  label(for='State') State:
+  input#State.form-control(type='text' placeholder='State')
+  br
+  label(for='Zip code') Zip code:
+  input#Zipcode.form-control(type='text' placeholder='Zipcode')
+  br
+  label(for='Home phone #') Home phone #:
+  input.form-control(type='text' id='Homephone #' placeholder='Homephone #')
+  br
+  label(for='State') Work phone #:
+  input.form-control(type='text' id='Workphone #' placeholder='Workphone #')
+  br
+  label(for='State') Cell phone # :
+  input.form-control(type='text' id='Cellphone # ' placeholder='Cellphone # ')
+  br
+  |   Vehicle Make
+  br
+  label(for='Vehicle Make') Vehicle Make:
+  input.form-control(type='text' id='Vehicle Make' placeholder='Vehicle Make')
+  br
+  |   Model
+  br
+  label(for='Model') Model:
+  input#Model.form-control(type='text' placeholder='Model')
+  br
+  |   License number
+  br
+  label(for='License number') License number:
+  input.form-control(type='text' id='License number' placeholder='License number')
+  br
+  |   area of damage
+  br
+  label(for='area of damage') area of damage:
+  input.form-control(type='text' id='area of damage' placeholder='area of damage')
+  br
+  |   Is vehicle driveable?
+  br
+  input#html(type='radio' name='driver an employee' value='Yes')
+  label(for='html') Yes
+  br
+  input#html(type='radio' name='driver an employee' value='No')
+  label(for='html') No
+  br
+  |   If no, provide current location of vehicle
+  br
+  label(for='current location of vehicle') current location of vehicle:
+  input.form-control(type='text' id='current location of vehicle' placeholder='current location of vehicle')
+  br
+  |   Extent of damage
+  br
+  input#Moderate(type='radio' name='Moderate' value='Moderate')
+  label(for='html') Moderate
+  br
+  input(type='radio' id='Nothing visible' name='Nothing visible' value='Nothing visible')
+  label(for='html') Nothing visible
+  br
+  input#Severe(type='radio' name='Severe' value='Severe')
+  label(for='html') Severe
+  br
+  input#Slight(type='radio' name='Slight' value='Slight')
+  label(for='html') Slight
+  br
+  br
+  label(for='property damage (other than vehicle)') Describe the property damage (other than vehicle):
+  input.form-control(type='text' id='property damage (other than vehicle)' placeholder='property damage (other than vehicle)')
+  br
+  br
+  |   Extent of damage to property other than vehicle
+  br
+  input#html(type='radio' name='Moderate' value='Moderate')
+  label(for='html') Moderate
+  br
+  input#html(type='radio' name='Nothing visible' value='Nothing visible')
+  label(for='html') Nothing visible
+  br
+  input#html(type='radio' name='Severe' value='Severe')
+  label(for='html') Severe
+  br
+  input#html(type='radio' name='Slight' value='Slight')
+  label(for='html') Slight
+  br
+  |   Age of injured person
+  br
+  label(for='Age of injured person') Age of injured person:
+  input.form-control(type='text' id='Age of injured person' placeholder='Age of injured person')
+  br
+  br
+  |   Sex of injured person
+  br
+  input#html(type='radio' name='Male' value='Male')
+  label(for='html') Male
+  br
+  input#html(type='radio' name='Female' value='Female')
+  label(for='html') Female
+  br
+  |   Was the injured person transported by paramedics?
+  br
+  input#html(type='radio' name='Yes' value='Yes')
+  label(for='html') Yes
+  br
+  input#html(type='radio' name='No' value='No')
+  label(for='html') No
+  br
+  |   If yes, where was the injured person taken?
+  label(for='If yes, where was the injured person taken?')   If yes, where was the injured person taken?:
+  input.form-control(type='text' id='If yes, where was the injured person taken?' placeholder=' If yes, where was the injured person taken?')
+  br
+  br
+  |   Do you expect the injured person to file a claim?
+  br
+  input#html(type='radio' name='Yes' value='Yes')
+  label(for='html') Yes
+  br
+  input#html(type='radio' name='No' value='No')
+  label(for='html') No
+  br
+  |   Describe the injury
+  label(for='Describe the injury') Describe the injury:
+  input.form-control(type='text' id='Describe the injury' placeholder='Describe the injury')
+  br
+  br
+  |   ADDITIONAL CLAIMANT INFORMATION
+  br
+  |   Identify other people involved in the accident. (Make additional copies of this section if needed.)
+  |   How was the person involved in the accident? (Check all that apply.)
+  br
+  input(type='checkbox' id='Driver of other vehicle' name='Driver of other vehicle' value='Driver of other vehicle')
+  label(for='Driver of other vehicle')  Driver of other vehicle
+  br
+  input(type='checkbox' id='Owner of other vehicle' name='Owner of other vehicle' value='Owner of other vehicle')
+  label(for='Owner of other vehicle')  Owner of other vehicle
+  br
+  input#Pedestrian(type='checkbox' name='Pedestrian' value='Pedestrian')
+  label(for='Pedestrian') Pedestrian
+  br
+  input(type='checkbox' id='Injured person' name='Injured person' value='Injured person')
+  label(for='Injured person')  Injured person
+  br
+  input(type='checkbox' id='Passenger of agency vehicle' name='Passenger of agency vehicle' value='Passenger of agency vehicle')
+  label(for='Passenger of agency vehicle')  Passenger of agency vehicle
+  br
+  input(type='checkbox' id='Owner of involved property' name='Owner of involved property' value='Owner of involved property')
+  label(for='Owner of involved property')  Owner of involved property
+  br
+  input(type='checkbox' id='Passenger of other vehicle' name='Passenger of other vehicle' value='Passenger of other vehicle')
+  label(for='Passenger of other vehicle')  Passenger of other vehicle
+  br
+  |   Last name or business name
+  br
+  label(for='Last name or business name') First Name:
+  input.form-control(type='text' id='Last name or business name' placeholder='Last name or business name')
+  label(for='First name (not necessary for business)') First name (not necessary for business):
+  input.form-control(type='text' id='First name (not necessary for business)' placeholder='First name (not necessary for business)')
+  br
+  label(for='Address') Address:
+  input#Address.form-control(type='text' placeholder='Address')
+  br
+  label(for='City') City:
+  input#City.form-control(type='text' placeholder='City')
+  br
+  label(for='State') State:
+  input#State.form-control(type='text' placeholder='State')
+  br
+  label(for='Zip code') Zip code:
+  input#Zipcode.form-control(type='text' placeholder='Zipcode')
+  br
+  label(for='Home phone #') Home phone #:
+  input.form-control(type='text' id='Homephone #' placeholder='Homephone #')
+  br
+  label(for='State') Work phone #:
+  input.form-control(type='text' id='Workphone #' placeholder='Workphone #')
+  br
+  label(for='State') Cell phone # :
+  input.form-control(type='text' id='Cellphone # ' placeholder='Cellphone # ')
+  br
+  |   Vehicle Make
+  br
+  label(for='Vehicle Make') Vehicle Make:
+  input.form-control(type='text' id='Vehicle Make' placeholder='Vehicle Make')
+  br
+  |   Model
+  br
+  label(for='Model') Model:
+  input#Model.form-control(type='text' placeholder='Model')
+  br
+  |   License number
+  br
+  label(for='License number') License number:
+  input.form-control(type='text' id='License number' placeholder='License number')
+  br
+  |   area of damage
+  br
+  label(for='area of damage') area of damage:
+  input.form-control(type='text' id='area of damage' placeholder='area of damage')
+  br
+  |   Is vehicle driveable?
+  br
+  input#html(type='radio' name='driver an employee' value='Yes')
+  label(for='html') Yes
+  br
+  input#html(type='radio' name='driver an employee' value='No')
+  label(for='html') No
+  br
+  |   If no, provide current location of vehicle
+  br
+  label(for='current location of vehicle') current location of vehicle:
+  input.form-control(type='text' id='current location of vehicle' placeholder='current location of vehicle')
+  br
+  |   Extent of damage
+  br
+  input#html(type='radio' name='Moderate' value='Moderate')
+  label(for='html') Moderate
+  br
+  input#html(type='radio' name='Nothing visible' value='Nothing visible')
+  label(for='html') Nothing visible
+  br
+  input#html(type='radio' name='Severe' value='Severe')
+  label(for='html') Severe
+  br
+  input#html(type='radio' name='Slight' value='Slight')
+  label(for='html') Slight
+  br
+  br
+  label(for='property damage (other than vehicle)') Describe the property damage (other than vehicle):
+  input.form-control(type='text' id='property damage (other than vehicle)' placeholder='property damage (other than vehicle)')
+  br
+  br
+  |   Extent of damage to property other than vehicle
+  br
+  input#html(type='radio' name='Moderate' value='Moderate')
+  label(for='html') Moderate
+  br
+  input#html(type='radio' name='Nothing visible' value='Nothing visible')
+  label(for='html') Nothing visible
+  br
+  input#html(type='radio' name='Severe' value='Severe')
+  label(for='html') Severe
+  br
+  input#html(type='radio' name='Slight' value='Slight')
+  label(for='html') Slight
+  br
+  |   Age of injured person
+  br
+  label(for='Age of injured person') Age of injured person:
+  input.form-control(type='text' id='Age of injured person' placeholder='Age of injured person')
+  br
+  br
+  |   Sex of injured person
+  br
+  input#html(type='radio' name='Male' value='Male')
+  label(for='html') Male
+  br
+  input#html(type='radio' name='Female' value='Female')
+  label(for='html') Female
+  br
+  |   Was the injured person transported by paramedics?
+  br
+  input#html(type='radio' name='Yes' value='Yes')
+  label(for='html') Yes
+  br
+  input#html(type='radio' name='No' value='No')
+  label(for='html') No
+  br
+  |   If yes, where was the injured person taken?
+  label(for='If yes, where was the injured person taken?')   If yes, where was the injured person taken?:
+  input.form-control(type='text' id='If yes, where was the injured person taken?' placeholder=' If yes, where was the injured person taken?')
+  br
+  br
+  |   Do you expect the injured person to file a claim?
+  br
+  input#html(type='radio' name='Yes' value='Yes')
+  label(for='html') Yes
+  br
+  input#html(type='radio' name='No' value='No')
+  label(for='html') No
+  br
+  |   Describe the injury
+  label(for='Describe the injury') Describe the injury:
+  input.form-control(type='text' id='Describe the injury' placeholder='Describe the injury')
+  br
+  br
+  |   Identify witnesses of the accident. (Provide the following information for each witness. Make additional copies of this
+  |   page if needed.)
+  br
+  label(for='Last name') Last name:
+  input.form-control(type='text' id='Last name' placeholder='Last name')
+  br
+  label(for='First name') First name:
+  input.form-control(type='text' id='First name' placeholder='First name')
+  br
+  label(for='Address') Address:
+  input#Address.form-control(type='text' placeholder='Address')
+  br
+  label(for='City') City:
+  input#City.form-control(type='text' placeholder='City')
+  br
+  label(for='State') State:
+  input#State.form-control(type='text' placeholder='State')
+  br
+  label(for='Zip code') Zip code:
+  input#Zipcode.form-control(type='text' placeholder='Zipcode')
+  br
+  label(for='Home phone #') Home phone #:
+  input.form-control(type='text' id='Homephone #' placeholder='Homephone #')
+  br
+  label(for='State') Work phone #:
+  input.form-control(type='text' id='Workphone #' placeholder='Workphone #')
+  br
+  label(for='State') Cell phone # :
+  input.form-control(type='text' id='Cellphone #' placeholder='Cellphone #')
+  br
+  |   Witness to accident?
+  br
+  input#html(type='radio' name='Yes' value='Yes')
+  label(for='html') Yes
+  br
+  input#html(type='radio' name='No' value='No')
+  label(for='html') No
+  br
+  input#html(type='radio' name='Unknown' value='Unknown')
+  label(for='html') Unknown
+  br
+  br
+  |   Relation to injured person or property owner:
+  br
+  |   Did witness make any statements?
+  br
+  input#html(type='radio' name='Yes' value='Yes')
+  label(for='html') Yes
+  br
+  input#html(type='radio' name='No' value='No')
+  label(for='html') No
+  br
+  input#html(type='radio' name='Unknown' value='Unknown')
+  label(for='html') Unknown
+  br
+  br
+  label(for='What did witness say')   If yes, provide the following information. What did witness say?:
+  input.form-control(type='text' id='What did witness say' placeholder='What did witness say')
+  br
+  br
+  |   Where was witness when the accident occurred?
+  label(for='Where was witness when the accident occurred?') Where was witness when the accident occurred?:
+  input.form-control(type='text' id='Where was witness when the accident occurred?' placeholder='Where was witness when the accident occurred?')
+  br
+  br
+  |   Was the driver of the agency vehicle conducting agency business at the time of the accident?
+  br
+  input#html(type='radio' name='Yes' value='Yes')
+  label(for='html') Yes
+  br
+  input#html(type='radio' name='No' value='No')
+  label(for='html') No
+  br
+  input#html(type='radio' name='Unknown' value='Unknown')
+  label(for='html') Unknown
+  br
+  br
+  label(for='What street was the agency driver on?') What street was the agency driver on?:
+  input.form-control(type='text' id='What street was the agency driver on?' placeholder='What street was the agency driver on?')
+  br
+  label(for='What street was the other driver driving on?') What street was the other driver driving on?:
+  input.form-control(type='text' id='What street was the other driver driving on?' placeholder='What street was the other driver driving on?')
+  br
+  br
+  label(for='What direction was the agency driver traveling?')
+    | &quot;What direction was the agency driver traveling?
+    br
+    | :
+  input.form-control(type='text' id='What direction was the agency driver traveling?' placeholder='What direction was the agency driver traveling?')
+  br
+  br
+  input#html(type='radio' name='North' value='North')
+  label(for='html') North
+  br
+  input#html(type='radio' name='South' value='South')
+  label(for='html') South
+  br
+  input#html(type='radio' name='East' value='East')
+  label(for='html') East
+  br
+  input#html(type='radio' name='West' value='West')
+  label(for='html') West
+  br
+  br
+  |   What direction was the other driver traveling?
+  br
+  input#html(type='radio' name='North' value='North')
+  label(for='html') North
+  br
+  input#html(type='radio' name='South' value='South')
+  label(for='html') South
+  br
+  input#html(type='radio' name='East' value='East')
+  label(for='html') East
+  br
+  input#html(type='radio' name='West' value='West')
+  label(for='html') West
+  br
+  br
+  |   Weather conditions
+  br
+  input#html(type='radio' name='Dry' value='Dry')
+  label(for='html') Dry
+  br
+  input#html(type='radio' name='Fog' value='Fog')
+  label(for='html') Fog
+  br
+  input#html(type='radio' name='Ice' value='Ice')
+  label(for='html') Ice
+  br
+  input#html(type='radio' name='Snow' value='Snow')
+  label(for='html') Snow
+  br
+  input#html(type='radio' name='Wet' value='Wet')
+  label(for='html') Wet
+  br
+  br
+  label(for='Accident Diagram') Accident Diagram:
+  #injury-treatment.form-group
+    label(for='Accident Diagram' style='display: none') Description:
+    textarea.form-control(name='Accident Diagram' id='Accident Diagram' cols='30' rows='10')
+  br
+  .form-group.clear-submit-buttons
+    button.btn.btn-secondary.button-spaced(type='button') Clear
+    button.btn.btn-primary.button-spaced(type='button') Submit

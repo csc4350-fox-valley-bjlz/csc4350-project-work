@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notification of Injury to Employer Report</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="PDRMA_Form_04E_Employee_Injury_Report.css">
+    <script src="../public/js/form_04E_read_to_object.js"></script>
+</head>
+<body>
+<form id="pdrma-form-04E" onsubmit="return formSubmission()">
+
+    <div class="container pdrma-form-04E-title">
+        <h1 id="pdrma-form-04E-title">PDRMA Form O4E</h1>
+    </div>
+    <br>
+    <br>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <label for="employee-name">Employee Name</label>
+                <input type="text" class="form-control" id="employee-name" placeholder="Your Name Here">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <label for="date-of-incident">Date of Incident</label>
+                <input type="text" class="form-control" id="date-of-incident" placeholder="mm/dd/yyyy">
+            </div>
+            <div class="col">
+                <label for="time-of-incident">Time of Incident</label>
+                <input type="text" class="form-control" id="time-of-incident" placeholder="hh/mm a.m./p.m.">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <label for="location-of-accident">Specific location of accident</label>
+                <input type="text" class="form-control" id="location-of-accident" placeholder=" (Ex. Second floor hallway of recreation center, storage closet of maintenance shed, south entrance of aquatic facility, etc.)">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <p>Are you reporting the incident for the first time using this form?</p>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <label for="first-time-reporting-yes" class="form-check-label">Yes</label>
+                    <input type="radio" name="first-time-report" class="form-check-input" id="first-time-reporting-yes">
+                </div>
+                <div class="form-check form-check-inline">
+                    <label for="first-time-reporting-no" class="form-check-label">No</label>
+                    <input type="radio" name="first-time-report" class="form-check-input" id="first-time-reporting-no">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <p>If no, when did you first report the injury (verbally or in writing) and to whom did you report it?</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="date-first-reported">Date:</label>
+                <input type="text" class="form-control" id="date-first-reported" placeholder="mm/dd/yyyy">
+            </div>
+            <div class="col">
+                <label for="time-first-reported">Time:</label>
+                <input type="text" class="form-control" id="time-first-reported" placeholder="hh/mm a.m./p.m.">
+            </div>
+            <div class="col">
+                <label for="name-of-person-first-reported-to">Reported to: </label>
+                <input type="text" class="form-control" id="name-of-person-first-reported-to" placeholder="text">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="how-did-incident-occur">Describe how the injury occurred</label>
+        <textarea name="how-did-incident-occur" class="form-control" id="how-did-incident-occur" cols="30" rows="10" placeholder="(Identify the job task you were doing and include a step-by-step explanation of what led to the injury.)"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="people-present">Name all people present at the time of the incident</label>
+        <textarea name="people-present" class="form-control" id="people-present" cols="30" rows="10" placeholder="(e.g., coworkers and/or witnesses)"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="parts-injured">Identify <i>all</i> Body Parts you Injured</label>
+        <textarea name="parts-injured" class="form-control" id="parts-injured" cols="30" rows="10" placeholder="(Be specific. Indicate left or right, upper or lower.)"></textarea>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <p>Did you seek medical attention on the date of the incident?</p>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <label for="sought-medical-attention-y" class="form-check-label">Yes</label>
+                    <input type="radio" name="sought-medical" class="form-check-input" id="sought-medical-attention-y">
+                </div>
+                <div class="form-check form-check-inline">
+                    <label for="sought-medical-attention-n" class="form-check-label">No</label>
+                    <input type="radio" name="sought-medical" class="form-check-input" id="sought-medical-attention-n">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="sought-medical-yes-where">If yes, where did you seek treatment?</label>
+        <textarea name="sought-medical-yes-where" class="form-control" id="sought-medical-yes-where" cols="30" rows="5" placeholder="text"></textarea>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <p>Have you injured this body part previously?</p>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <label for="previous-injury-y" class="form-check-label">Yes</label>
+                    <input type="radio" name="previous-injury-radio" class="form-check-input" id="previous-injury-y">
+                </div>
+                <div class="form-check form-check-inline">
+                    <label for="previous-injury-n" class="form-check-label">No</label>
+                    <input type="radio" name="previous-injury-radio" class="form-check-input" id="previous-injury-n">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="previous-injury-where">If yes, please describe which body part and what the prior injury was.</label>
+        <textarea name="previous-injury-where" class="form-control" id="previous-injury-where" cols="30" rows="5" placeholder="text"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="sought-medical-previous-where">If yes, where did you receive treatment?</label>
+        <textarea name="sought-medical-previous-where" class="form-control" id="sought-medical-previous-where" cols="30" rows="5" placeholder="text"></textarea>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <p>The above information is accurate and true</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="emp-signature">Employee Signature:</label>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" class="form-check-input" id="emp-signature" >
+                </div>
+            </div>
+            <div class="col">
+                <label for="emp-date-signed">today's date:</label>
+                <input type="text" class="form-control" id="emp-date-signed" placeholder="mm/dd/yyyy">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="date-received-on">Notification of injury received on:</label>
+                <input type="text" class="form-control" id="date-received-on" placeholder="date received by employer representative">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="report-received-by">Notification of injury received by:</label>
+                <input type="text" class="form-control" id="report-received-by" placeholder="representative name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Signature:
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" class="form-check-input" id="representative-signature" >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group clear-submit-buttons">
+        <button type="button" class="btn btn-secondary button-spaced">Clear</button>
+        <button type="submit" class="btn btn-primary button-spaced">Submit</button>
+    </div>
+
+</form>
+</body>
+</html>

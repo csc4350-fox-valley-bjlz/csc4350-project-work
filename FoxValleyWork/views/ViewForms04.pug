@@ -1,0 +1,93 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title View Forms 04
+    link(rel='stylesheet' href='css/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet' href='css/ViewFormsGeneral.css')
+    script(src='js/jquery/dist/jquery.js')
+    script(src='css/bootstrap/dist/js/bootstrap.bundle.js')
+
+form(action='ViewFormsSelection' method='get').d-flex.justify-content-center
+    button.btn.btn-lg.btn-primary.action-button(type='submit' ) Go Back to View Forms
+
+table( style="width:100%;", border="1" )
+    //thead.thead-light
+    //    tr
+    //        th(scope='col') Program
+    //        th(scope='col') First
+    //        th(scope='col') Last
+    //        th(scope='col') Form
+    -var keys = Object.keys(data[0])
+    -console.log(data)
+    -console.log(keys)
+        tr
+            th viewFormButton
+            each met in keys
+                th=met
+    each row in data
+        tr
+            td
+                form(action='updateForm04' method='post').d-flex.justify-content-center
+                    button.btn.btn-lg.btn-primary.action-button(type='submit' name='form04id' value=`${row.Form04ID}` class='formButton' id=`${row.Form04ID}` ) update form
+                form(action='deleteForm04' method='post').d-flex.justify-content-center
+                    button.btn.btn-lg.btn-primary.action-button(type='submit' name='form04idDelete' value=`${row.Form04ID}` class='formButton' id=`${row.Form04ID}Delete` ) Delete form
+            td=row.Form04ID
+            td=row.Agency_Name
+            td=row.Todays_Date
+            td=row.Date_of_Incident
+            td=row.Time_of_Incident
+            td=row.Form_Completer_Name
+            td=row.Form_Completer_Title
+            td=row.Form_Completer_Phone
+            td=row.Form_Completer_Email
+            td=row.How_Incident_Occurred_Short
+            td=row.Incident_Location_Name
+            td=row.Incident_Location_Address
+            td=row.Incedent_Location_City
+            td=row.Incident_Location_State
+            td=row.Incident_Location_Zip
+            td=row.Incident_Location_Specific
+            td=row.Incident_Primary_Location
+            td=row.Employer_FEIN
+            td=row.Emp_Miss_3_Consecutive_Days
+            td=row.What_Employee_Doing
+            td=row.How_Incident_Occurred_Detailed
+            td=row.Emp_Last_Name
+            td=row.Emp_First_Name
+            td=row.Emp_Lase_Name
+            td=row.Emp_City
+            td=row.Emp_State
+            td=row.Emp_Zip
+            td=row.Emp_Best_Contact_Num
+            td=row.Emp_Email
+            td=row.Emp_Social
+            td=row.Emp_DoB
+            td=row.Emp_Gender
+            td=row.Emp_Marital_Status
+            td=row.Emp_Num_Dependents
+            td=row.Emp_Speak_English
+            td=row.Emp_Average_Week_Wage
+            td=row.Emp_Job
+            td=row.Emp_Employ_Status
+            td=row.Emp_Date_Hired
+            td=row.Emp_Tenure
+            td=row.Emp_Time_Began_Work_Incident
+            td=row.Last_Date_Worked_Prior_Incident
+            td=row.Emp_Incident_Date_Death
+            td=row.Incident_Occur_on_Premices
+            td=row.Injury_or_Illness
+            td=row.Description_of_Injury_Illness
+            td=row.Object_Substance_of_Harm
+            td=row.Emp_Seek_Medical_Attention
+            td=row.Treated_Away_From_Worksite
+            td=row.Treated_in_ER
+            td=row.Treated_in_ER
+            td=row.Hospitalized_Overnight
+            td=row.Doc_Name
+            td=row.Doc_Address
+            td=row.Doc_City
+            td=row.Doc_State
+            td=row.Doc_Zip
+            td=row.Doc_Phone
+
+

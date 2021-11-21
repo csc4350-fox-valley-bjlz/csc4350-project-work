@@ -1,0 +1,31 @@
+#minor-injury-log-form {
+    width: 70vw;
+    padding: 2rem;
+    border: 2px solid blue;
+    border-radius: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    background-color: #f7f7f7;
+}
+
+.minor-injury-log-form-title {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#minor-injury-log-form-title {
+    color: blue;
+}
+
+.clear-submit-buttons {
+    display: flex;
+    justify-content: right;
+}
+
+.button-spaced {
+    margin-right: 1rem;
+    margin-left: 1rem;
+}

@@ -1,0 +1,104 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Minor Injury Log
+  link(rel='stylesheet' href='css/bootstrap/dist/css/bootstrap.min.css')
+  link(rel='stylesheet' href='css/MinorInjuryLog.css')
+  script(src='../node_modules/jquery/dist/jquery.js')
+  script(src='../node_modules/bootstrap/dist/js/bootstrap.bundle.js')
+form#minor-injury-log-form(action='')
+  .container.minor-injury-log-form-title
+    h1#minor-injury-log-form-title Minor Injury Log
+  br
+  .form-group
+    label(for='program-group-name') Program/Group Name:
+    input#program-group-name.form-control(type='text' placeholder='Program/Group Name')
+  br
+  .row
+    .col
+      .form-group
+        label(for='program-leaders') Program Leader(s):
+        input#program-leaders.form-control(type='text' placeholder='Program Leader(s)')
+    .col
+      .form-group
+        label(for='season-year') Season/Year:
+        input#season-year.form-control(type='text' placeholder='Season/Year')
+  br
+  label(for='date-form-group') Date:
+  br
+  #date-form-group.form-group
+    .row
+      .col
+        label(for='incident-date-month') Month:
+        input#incident-date-month.form-control(type='text' placeholder='Month')
+      .col
+        label(for='incident-date-day') Day:
+        input#incident-date-day.form-control(type='text' placeholder='Day')
+      .col
+        label(for='incident-date-year') Year:
+        input#incident-date-year.form-control(type='text' placeholder='Year')
+  br
+  label(for='incident-time-form-group') Time:
+  br
+  #incident-time-form-group.form-group
+    .row
+      .col
+        label(for='incident-time-hour') Hour:
+        input#incident-time-hour.form-control(type='text' placeholder='Hour')
+      .col
+        label(for='incident-time-minute') Minute:
+        input#incident-time-minute.form-control(type='text' placeholder='Minute')
+      .col
+        label(for='incident-time-am-pm') AM/PM:
+        input#incident-time-am-pm.form-control(type='text' placeholder='AM or PM')
+  br
+  label(for='name-of-injured') Name of Injured:
+  br
+  br
+  #name-of-injured.form-group
+    .row
+      .col
+        label(for='name-of-injured-firstname') First Name:
+        input#name-of-injured-firstname.form-control(type='text' placeholder='First Name')
+      .col
+        label(for='name-of-injured-lastname') Last Name:
+        input#name-of-injured-lastname.form-control(type='text' placeholder='Last Name')
+  br
+  label(for='injury-location') Injury Location:
+  br
+  br
+  #injury-location.form-group
+    label(for='injury-location-entry') Location:
+    input#injury-location-entry.form-control(type='text' placeholder='Location')
+  br
+  label(for='injury-treatment') Injury Treatment:
+  #injury-treatment.form-group
+    label(for='injury-treatment-description' style='display: none') Description:
+    textarea#injury-treatment-description.form-control(name='injury-treatment-description' cols='30' rows='10')
+  br
+  label(for='injury-background-info') How Injury Occurred:
+  #injury-background-info.form-group
+    label(for='injury-background-info-description' style='display: none') Description:
+    textarea#injury-background-info-description.form-control(name='injury-background-info-description' cols='30' rows='10')
+  br
+  label(for='facility-location') Facility/Location:
+  br
+  br
+  #facility-location.form-group
+    label(for='facility-location-location') Location:
+    input#facility-location-location(type='text' placeholder='Location')
+    label(for='facility-location-facility') Facility:
+    input#facility-location-facility(type='text' placeholder='Facility')
+  br
+  label(for='reporting-staff-member') Full Name of Staff Who Notified Guardian:
+  br
+  br
+  #reporting-staff-member.form-group
+    label(for='reporting-staff-member-firstname') First Name:
+    input#reporting-staff-member-firstname(type='text' placeholder='First Name')
+    label(for='reporting-staff-member-lastname') Last Name:
+    input#reporting-staff-member-lastname(type='text' placeholder='Last Name')
+  br
+  .form-group.clear-submit-buttons
+    button.btn.btn-secondary.button-spaced(type='button') Clear
+    button.btn.btn-primary.button-spaced(type='button') Submit

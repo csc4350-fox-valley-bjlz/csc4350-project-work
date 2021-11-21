@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Injury Report</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="PDRMA_Form_04_Employee_Injury_Report.css">
+    <script src="../public/js/form_04_read_to_object.js"></script>
+</head>
+<body>
+<form id="pdrma-form-04" onsubmit="return formSubmission();">
+
+    <div class="container pdrma-form-04-title">
+        <h1 id="pdrma-form-04-title">PDRMA Form O4</h1>
+    </div>
+    <br>
+    <br>
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <p>Complete an Employee Injury Report for each employee injured</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <label for="agency-name">Agency Name</label>
+                <input type="text" class="form-control" id="agency-name" placeholder="Fox Valley Special Recreation Association">
+            </div>
+            <div class="col">
+                <label for="todays-date">Today's date</label>
+                <input type="text" class="form-control" id="todays-date" placeholder="month/day/year">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <label for="date-of-incident">Date of Incident</label>
+                <input type="text" class="form-control" id="date-of-incident" placeholder="mm/dd/yyyy">
+            </div>
+            <div class="col">
+                <label for="time-of-incident">Time of Incident</label>
+                <input type="text" class="form-control" id="time-of-incident" placeholder="hh/mm   a.m./p.m.">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <label for="name-of-person-completing-report">Name of person completing report</label>
+                <input type="text" class="form-control" id="name-of-person-completing-report">
+            </div>
+            <div class="col">
+                <label for="title-of-person-completing-report">Title of person completing report</label>
+                <input type="text" class="form-control" id="title-of-person-completing-report">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <label for="business-phone-number">Business Phone Number</label>
+                <input type="text" class="form-control" id="business-phone-number" placeholder="630.907.1114">
+            </div>
+            <div class="col">
+                <label for="business-email">Business Email</label>
+                <input type="text" class="form-control" id="business-email" placeholder="jasonp@fvsra.org">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="how-did-incident-occur">How did the incident occur?</label>
+        <textarea name="how-did-incident-occur" class="form-control" id="how-did-incident-occur" cols="30" rows="10" placeholder="Provide a brief, factual description, do not speculate on fault, etc."></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="name-of-location">Name of the location or nearest intersection where the incident occurred</label>
+        <input type="text" class="form-control" id="name-of-location">
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <p>Is there an address for this location? If yes, please provide the following:</p>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <label for="address-available-yes" class="form-check-label">Yes</label>
+                    <input type="radio" name="address-available-radio" class="form-check-input" id="address-available-yes">
+                </div>
+                <div class="form-check form-check-inline">
+                    <label for="address-available-no" class="form-check-label">No</label>
+                    <input type="radio" name="address-available-radio" class="form-check-input" id="address-available-no">
+                </div>
+                <div class="form-check form-check-inline">
+                    <label for="address-available-unknown" class="form-check-label">Unknown</label>
+                    <input type="radio" name="address-available-radio" class="form-check-input" id="address-available-unknown">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="incident-address">Address: </label>
+                    <input type="text" class="form-control" id="incident-address">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="incident-city">city:</label>
+                    <input type="text" class="form-control" id="incident-city">
+                </div>
+                <div class="col">
+                    <label for="incident-state">state:</label>
+                    <input type="text" class="form-control" id="incident-state">
+                </div>
+                <div class="col">
+                    <label for="incident-zip">zip code:</label>
+                    <input type="text" class="form-control" id="incident-zip">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="specific-location">Location (Specify the exact type of location/facility where injury occurred.)</label>
+            <input type="text" class="form-control" id="specific-location" placeholder="Ex. maintenance garage, sports field, aquatic outdoor, golf course, etc">
+        </div>
+
+        <div class="form-group">
+            <label for="primary-location">Primary location (Specify exact location. Ex. lap pool, cart storage, classroom, pavilion)</label>
+            <input type="text" class="form-control" id="primary-location">
+        </div>
+
+        <div class="form-group">
+            <label for="employer-FEIN">Employer's FEIN</label>
+            <input type="text" class="form-control" id="employer-FEIN">
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <p>Did the employee miss more than (3) scheduled work days?</p>
+                </div>
+                <div class="form-check form-check-inline col">
+                    <label for="emp-miss-3-days-y">yes</label>
+                    <input type="radio" name="3-day-miss-radio" class="form-check-input" id="emp-miss-3-days-y" >
+                </div>
+                <div class="form-check form-check-inline col">
+                    <label for="emp-miss-3-days-n">no</label>
+                    <input type="radio" name="3-day-miss-radio" class="form-check-input" id="emp-miss-3-days-n" >
+                </div>
+                <div class="form-check form-check-inline col">
+                    <label for="emp-miss-3-days-m">unknown</label>
+                    <input type="radio" name="3-day-miss-radio" class="form-check-input" id="emp-miss-3-days-m" >
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="what-emp-doing-during-accident">What was the employee doing when the accident occurred?</label>
+            <input type="text" class="form-control" id="what-emp-doing-during-accident">
+        </div>
+
+        <div class="form-group">
+            <label for="how-incident-occur">How did the incident occur</label>
+            <textarea name="how-incident-occur" class="form-control" id="how-incident-occur" cols="30" rows="5" placeholder="(provide a detailed factual description)"></textarea>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="emp-last-name">Employee Last Name:</label>
+                <input type="text" class="form-control" id="emp-last-name">
+            </div>
+            <div class="col">
+                <label for="emp-first-name">Employee First Name:</label>
+                <input type="text" class="form-control" id="emp-first-name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="emp-address">Address: </label>
+                <input type="text" class="form-control" id="emp-address">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="emp-city">city:</label>
+                <input type="text" class="form-control" id="emp-city">
+            </div>
+            <div class="col">
+                <label for="emp-state">state:</label>
+                <input type="text" class="form-control" id="emp-state">
+            </div>
+            <div class="col">
+                <label for="emp-zip">zip code:</label>
+                <input type="text" class="form-control" id="emp-zip">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="emp-best-phone">Best number to contact Employee</label>
+                <input type="text" class="form-control" id="emp-best-phone">
+            </div>
+            <div class="col">
+                <label for="emp-email">Employee's email</label>
+                <input type="text" class="form-control" id="emp-email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="emp-social">Employee social security number</label>
+                <input type="text" class="form-control" id="emp-social" placeholder="###-##-####">
+            </div>
+            <div class="col">
+                <label for="emp-DoB">Employee date of birth</label>
+                <input type="text" class="form-control" id="emp-DoB" placeholder="mm/dd/yyyy">
+            </div>
+            <div class="col">
+                <p>Gender:</p>
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="male" class="form-check-label">Male</label>
+                <input type="radio" name="gender-radio" class="form-check-input" id="male">
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="female" class="form-check-label">Female</label>
+                <input type="radio" name="gender-radio" class="form-check-input" id="female">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="emp-marital-status">Employee's marital status</label>
+                <input type="text" class="form-control" id="emp-marital-status" placeholder="divorced/single/married/unknown">
+            </div>
+            <div class="col">
+                <label for="emp-num-dependents">Number of dependents</label>
+                <input type="text" class="form-control" id="emp-num-dependents" placeholder="###">
+            </div>
+            <div class="col">
+                <p>Does Employee Speaks English:</p>
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="speak-english-y" class="form-check-label">yes</label>
+                <input type="radio" name="english-radio" class="form-check-input" id="speak-english-y">
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="speak-english-n" class="form-check-label">no</label>
+                <input type="radio" name="english-radio" class="form-check-input" id="speak-english-n">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="emp-avg-week-wage">Average weekly wage</label>
+                <input type="text" class="form-control" id="emp-avg-week-wage">
+            </div>
+            <div class="col">
+                <label for="emp-job-title-occupation">Employee job title/occupation</label>
+                <input type="text" class="form-control" id="emp-job-title-occupation">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>What is the Employee's Employment status?</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-check form-check-inline col">
+                <label for="employment-status-permanent-fulltime" class="form-check-label">Permanent full-time</label>
+                <input type="radio" name="employ-status-radio" class="form-check-input" id="employment-status-permanent-fulltime">
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="employment-status-permanent-parttime" class="form-check-label">Permanent part-time</label>
+                <input type="radio" name="employ-status-radio" class="form-check-input" id="employment-status-permanent-parttime">
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="employment-status-seasonal" class="form-check-label">Seasonal</label>
+                <input type="radio" name="employ-status-radio" class="form-check-input" id="employment-status-seasonal">
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="employment-status-intern" class="form-check-label">Intern</label>
+                <input type="radio" name="employ-status-radio" class="form-check-input" id="employment-status-intern">
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="employment-status-other" class="form-check-label">Other</label>
+                <input type="radio" name="employ-status-radio" class="form-check-input" id="employment-status-other">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="emp-date-hired">Date Hired</label>
+                <input type="text" class="form-control" id="emp-date-hired" placeholder="mm/dd/yyyy">
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <p>What is employee's Tenure? (length of employment)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-check form-check-inline col">
+                        <label for="emp-tenure-less-1" class="form-check-label">less than 1 yr.</label>
+                        <input type="radio" name="employ-tenure-radio" class="form-check-input" id="emp-tenure-less-1">
+                    </div>
+                    <div class="form-check form-check-inline col">
+                        <label for="emp-tenure-1-3" class="form-check-label">1-3 years</label>
+                        <input type="radio" name="employ-tenure-radio" class="form-check-input" id="emp-tenure-1-3">
+                    </div>
+                    <div class="form-check form-check-inline col">
+                        <label for="emp-tenure-4-10" class="form-check-label">4-10 yrs.</label>
+                        <input type="radio" name="employ-tenure-radio" class="form-check-input" id="emp-tenure-4-10">
+                    </div>
+                    <div class="form-check form-check-inline col">
+                        <label for="emp-tenure-11-19" class="form-check-label">11-19 yrs.</label>
+                        <input type="radio" name="employ-tenure-radio" class="form-check-input" id="emp-tenure-11-19">
+                    </div>
+                    <div class="form-check form-check-inline col">
+                        <label for="emp-tenure-20-more" class="form-check-label">more than 20 yrs.</label>
+                        <input type="radio" name="employ-tenure-radio" class="form-check-input" id="emp-tenure-20-more">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="emp-time-began-work">Time employee began work on day of incident</label>
+            <input type="text" class="form-control" id="emp-time-began-work" placeholder="hh/mm a.m./p.m.">
+        </div>
+        <div class="form-group">
+            <label for="emp-last-date-worked">Last date employee worked prior to incident day</label>
+            <input type="text" class="form-control" id="emp-last-date-worked" placeholder="mm/dd/yyyy">
+        </div>
+        <div class="form-group">
+            <label for="emp-death-date">If employee died as a result of the accident, please provide a date of death</label>
+            <input type="text" class="form-control" id="emp-death-date" placeholder="mm/dd/yyyy">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <p>Did the incident occur on agency premices?</p>
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="incident-occur-on-premise-y">yes</label>
+                <input type="radio" name="incident-on-premise-radio" class="form-check-input" id="incident-occur-on-premise-y" >
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="incident-occur-on-premise-n">no</label>
+                <input type="radio" name="incident-on-premise-radio" class="form-check-input" id="incident-occur-on-premise-n" >
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="incident-occur-on-premise-u">unknown</label>
+                <input type="radio" name="incident-on-premise-radio" class="form-check-input" id="incident-occur-on-premise-u" >
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <p>Injury of Illness?</p>
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="injury-checked">Injury</label>
+                <input type="radio" name="injury-illness-radio" class="form-check-input" id="injury-checked" >
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="illness-checked">Illness</label>
+                <input type="radio" name="injury-illness-radio" class="form-check-input" id="illness-checked" >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="injury-illness-description">Please describe the illness or injury</label>
+            <textarea name="injury-illness-description" class="form-control" id="injury-illness-description" cols="30" rows="5" placeholder="(affected body part and type of injury; Ex. contusion, bruise, laceration, sprain, break, etc.)"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="object-substance-of-harm">What object or substance, if any, directly harmed the Employee</label>
+            <input type="text" class="form-control" id="object-substance-of-harm" placeholder="if none type none">
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <p>Did the employee seek medical attention?</p>
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="emp-sought-medical-y">yes</label>
+                <input type="radio" name="emp-sought-medical-radio" class="form-check-input" id="emp-sought-medical-y" >
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="emp-sought-medical-n">no</label>
+                <input type="radio" name="emp-sought-medical-radio" class="form-check-input" id="emp-sought-medical-n" >
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="emp-sought-medical-u">unknown</label>
+                <input type="radio" name="emp-sought-medical-radio" class="form-check-input" id="emp-sought-medical-u" >
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <p>If yes, was the treatment given away from the worksite?</p>
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="treatment-away-y">yes</label>
+                <input type="radio" name="emp-treatment-away-radio" class="form-check-input" id="treatment-away-y" >
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="treatment-away-n">no</label>
+                <input type="radio" name="emp-treatment-away-radio" class="form-check-input" id="treatment-away-n" >
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="treatment-away-u">unknown</label>
+                <input type="radio" name="emp-treatment-away-radio" class="form-check-input" id="treatment-away-u" >
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <p>Was employee treated in an emergency room?</p>
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="emergency-room-y">yes</label>
+                <input type="radio" name="emergency-room-radio" class="form-check-input" id="emergency-room-y" >
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="emergency-room-n">no</label>
+                <input type="radio" name="emergency-room-radio" class="form-check-input" id="emergency-room-n" >
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="emergency-room-u">unknown</label>
+                <input type="radio" name="emergency-room-radio" class="form-check-input" id="emergency-room-u" >
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <p>Was employee treated overnight as an outpatient?</p>
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="outpatient-overnight-y">yes</label>
+                <input type="radio" name="outpatient-overnight-radio" class="form-check-input" id="outpatient-overnight-y" >
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="outpatient-overnight-n">no</label>
+                <input type="radio" name="outpatient-overnight-radio" class="form-check-input" id="outpatient-overnight-n" >
+            </div>
+            <div class="form-check form-check-inline col">
+                <label for="outpatient-overnight-u">unknown</label>
+                <input type="radio" name="outpatient-overnight-radio" class="form-check-input" id="outpatient-overnight-u" >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="treater-room-name">Name of treating physician, health care provider, or emergency room</label>
+            <input type="text" class="form-control" id="treater-room-name">
+        </div>
+
+        <div class="form-group">
+            <label for="treater-room-address">Address</label>
+            <input type="text" class="form-control" id="treater-room-address">
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <label for="treater-room-city">City</label>
+                    <input type="text" class="form-control" id="treater-room-city">
+                </div>
+                <div class="col">
+                    <label for="treater-room-state">State</label>
+                    <input type="text" class="form-control" id="treater-room-state">
+                </div>
+                <div class="col">
+                    <label for="treater-room-zip">zip code</label>
+                    <input type="text" class="form-control" id="treater-room-zip">
+                </div>
+                <div class="col">
+                    <label for="treater-room-phone">Phone Number</label>
+                    <input type="text" class="form-control" id="treater-room-phone">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group clear-submit-buttons">
+        <button type="button" class="btn btn-secondary button-spaced">Clear</button>
+        <button type="submit" class="btn btn-primary button-spaced">Submit</button>
+    </div>
+
+
+</form>
+</body>
+</html>

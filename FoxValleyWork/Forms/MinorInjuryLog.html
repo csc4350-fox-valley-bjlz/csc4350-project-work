@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minor Injury Log</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="MinorInjuryLog.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+<body>
+<form action="" id="minor-injury-log-form">
+
+    <div class="container minor-injury-log-form-title">
+    <h1 id="minor-injury-log-form-title">Minor Injury Log</h1>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+        <label for="program-group-name">Program/Group Name:</label>
+        <input type="text" class="form-control" id="program-group-name" placeholder="Program/Group Name">
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="program-leaders">Program Leader(s):</label>
+                <input type="text" class="form-control" id="program-leaders" placeholder="Program Leader(s)">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="season-year">Season/Year:</label>
+                <input type="text" class="form-control" id="season-year" placeholder="Season/Year">
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <label for="date-form-group">Date:</label>
+
+    <br>
+
+    <div class="form-group" id="date-form-group">
+        <div class="row">
+
+            <div class="col">
+                <label for="incident-date-month">Month:</label>
+                <input type="text" class="form-control" id="incident-date-month" placeholder="Month">
+            </div>
+
+            <div class="col">
+                <label for="incident-date-day">Day:</label>
+                <input type="text" class="form-control" id="incident-date-day" placeholder="Day">
+            </div>
+
+            <div class="col">
+                <label for="incident-date-year">Year:</label>
+                <input type="text" class="form-control" id="incident-date-year" placeholder="Year">
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <label for="incident-time-form-group">Time:</label>
+
+    <br>
+
+    <div class="form-group" id="incident-time-form-group">
+        <div class="row">
+
+            <div class="col">
+                <label for="incident-time-hour">Hour:</label>
+                <input type="text" class="form-control" id="incident-time-hour" placeholder="Hour">
+            </div>
+
+            <div class="col">
+                <label for="incident-time-minute">Minute:</label>
+                <input type="text" class="form-control" id="incident-time-minute" placeholder="Minute">
+            </div>
+
+            <div class="col">
+                <label for="incident-time-am-pm">AM/PM:</label>
+                <input type="text" class="form-control" id="incident-time-am-pm" placeholder="AM or PM">
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <label for="name-of-injured">Name of Injured:</label>
+
+    <br>
+    <br>
+
+    <div class="form-group" id="name-of-injured">
+        <div class="row">
+            <div class="col">
+                <label for="name-of-injured-firstname">First Name:</label>
+                <input type="text" class="form-control" id="name-of-injured-firstname" placeholder="First Name">
+            </div>
+            <div class="col">
+                <label for="name-of-injured-lastname">Last Name:</label>
+                <input type="text" class="form-control" id="name-of-injured-lastname" placeholder="Last Name">
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <label for="injury-location">Injury Location:</label>
+
+    <br>
+    <br>
+    <div class="form-group" id="injury-location">
+        <label for="injury-location-entry">Location:</label>
+        <input type="text" class="form-control" id="injury-location-entry" placeholder="Location">
+    </div>
+    <br>
+    <label for="injury-treatment">Injury Treatment:</label>
+    <div class="form-group" id="injury-treatment">
+        <label for="injury-treatment-description" style="display: none">Description:</label>
+        <textarea class="form-control" name="injury-treatment-description" id="injury-treatment-description" cols="30" rows="10"></textarea>
+    </div>
+
+    <br>
+
+    <label for="injury-background-info">How Injury Occurred:</label>
+    <div class="form-group" id="injury-background-info">
+        <label for="injury-background-info-description" style="display: none">Description:</label>
+        <textarea class="form-control" name="injury-background-info-description" id="injury-background-info-description" cols="30" rows="10"></textarea>
+    </div>
+
+    <br>
+
+    <label for="facility-location">Facility/Location:</label>
+    <br>
+    <br>
+    <div class="form-group" id="facility-location">
+        <label for="facility-location-location">Location:</label>
+        <input type="text" id="facility-location-location" placeholder="Location">
+        <label for="facility-location-facility">Facility:</label>
+        <input type="text" id="facility-location-facility" placeholder="Facility">
+    </div>
+
+    <br>
+
+    <label for="reporting-staff-member">Full Name of Staff Who Notified Guardian:</label>
+
+    <br>
+    <br>
+
+    <div class="form-group" id="reporting-staff-member">
+        <label for="reporting-staff-member-firstname">First Name:</label>
+        <input type="text" id="reporting-staff-member-firstname" placeholder="First Name">
+
+        <label for="reporting-staff-member-lastname">Last Name:</label>
+        <input type="text" id="reporting-staff-member-lastname" placeholder="Last Name">
+    </div>
+
+    <br>
+
+    <div class="form-group clear-submit-buttons">
+        <button type="button" class="btn btn-secondary button-spaced">Clear</button>
+        <button type="button" class="btn btn-primary button-spaced">Submit</button>
+    </div>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,127 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Notification of Injury to Employer Report
+    link(rel='stylesheet' href='css/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet' href='css/PDRMA_Form_04E_Employee_Injury_Report.css')
+    script(src='js/form_04E_read_to_object.js')
+form#pdrma-form-04E(action='completeForm04E' method='post')
+    .container.pdrma-form-04E-title
+        h1#pdrma-form-04E-title PDRMA Form O4E
+    br
+    br
+    .form-group
+        .row
+            .col
+                label(for='employee-name') Employee Name
+                input#employee-name.form-control(type='text' name='Emp_Name' placeholder='Your Name Here')
+    .form-group
+        .row
+            .col
+                label(for='date-of-incident') Date of Incident
+                input#date-of-incident.form-control(type='text' name='Incident_Date' placeholder='yyyy-mm-dd')
+            .col
+                label(for='time-of-incident') Time of Incident
+                input#time-of-incident.form-control(type='text' name='Incident_Time' placeholder='00:00 - 24:60')
+    .form-group
+        .row
+            .col
+                label(for='location-of-accident') Specific location of accident
+                input#location-of-accident.form-control(type='text' name='Incident_Location_Specific' placeholder=' (Ex. Second floor hallway of recreation center, storage closet of maintenance shed, south entrance of aquatic facility, etc.)')
+    .form-group
+        .row
+            .col
+                p Are you reporting the incident for the first time using this form?
+            .col
+                .form-check.form-check-inline
+                    label.form-check-label(for='first-time-reporting-yes') Yes
+                    input#first-time-reporting-yes.form-check-input(type='radio' value=1 name='Incident_First_Report')
+                .form-check.form-check-inline
+                    label.form-check-label(for='first-time-reporting-no') No
+                    input#first-time-reporting-no.form-check-input(type='radio' valuee=0 name='Incident_First_Report')
+    .form-group
+        .row
+            .col
+                p
+                    | If no, when did you first report the injury (verbally or in writing) and to whom did you report it?
+        .row
+            .col
+                label(for='date-first-reported') Date:
+                input#date-first-reported.form-control(type='text' name='First_Report_Date' placeholder='yyyy-mm-dd')
+            .col
+                label(for='time-first-reported') Time:
+                input#time-first-reported.form-control(type='text' name='First_Report_Time' placeholder='00:00 - 24:60')
+            .col
+                label(for='name-of-person-first-reported-to') Reported to:
+                input#name-of-person-first-reported-to.form-control(type='text' name='First_Report_Who' placeholder='text')
+    .form-group
+        label(for='how-did-incident-occur') Describe how the injury occurred
+        textarea#how-did-incident-occur.form-control(name='How_Incident_Occurred_Description' cols='30' rows='10' placeholder='(Identify the job task you were doing and include a step-by-step explanation of what led to the injury.)')
+    .form-group
+        label(for='people-present') Name all people present at the time of the incident
+        textarea#people-present.form-control(name='Incident_Witnesses' cols='30' rows='10' placeholder='(e.g., coworkers and/or witnesses)')
+    .form-group
+        label(for='parts-injured')
+            | Identify
+            i all
+            |  Body Parts you Injured
+        textarea#parts-injured.form-control(name='Body_Parts_Injured' cols='30' rows='10' placeholder='(Be specific. Indicate left or right, upper or lower.)')
+    .form-group
+        .row
+            .col
+                p Did you seek medical attention on the date of the incident?
+            .col
+                .form-check.form-check-inline
+                    label.form-check-label(for='sought-medical-attention-y') Yes
+                    input#sought-medical-attention-y.form-check-input(type='radio' value=1 name='Medical_Attention_on_Incident_Date')
+                .form-check.form-check-inline
+                    label.form-check-label(for='sought-medical-attention-n') No
+                    input#sought-medical-attention-n.form-check-input(type='radio' value=0 name='Medical_Attention_on_Incident_Date')
+    .form-group
+        label(for='sought-medical-yes-where') If yes, where did you seek treatment?
+        textarea#sought-medical-yes-where.form-control(name='Where_Treatment' cols='30' rows='5' placeholder='text')
+    .form-group
+        .row
+            .col
+                p Have you injured this body part previously?
+            .col
+                .form-check.form-check-inline
+                    label.form-check-label(for='previous-injury-y') Yes
+                    input#previous-injury-y.form-check-input(type='radio' value=1 name='Injured_Part_Previously')
+                .form-check.form-check-inline
+                    label.form-check-label(for='previous-injury-n') No
+                    input#previous-injury-n.form-check-input(type='radio' value=0 name='Injured_Part_Previously')
+    .form-group
+        label(for='previous-injury-where') If yes, please describe which body part and what the prior injury was.
+        textarea#previous-injury-where.form-control(name='Described_Prev_Injury' cols='30' rows='5' placeholder='text')
+    .form-group
+        label(for='sought-medical-previous-where') If yes, where did you receive treatment?
+        textarea#sought-medical-previous-where.form-control(name='Where_Prev_Injury_Treated' cols='30' rows='5' placeholder='text')
+    .form-group
+        .row
+            .col
+                p The above information is accurate and true
+        .row
+            .col
+                label(for='emp-signature') Employee Signature:
+                .form-check.form-check-inline
+                    input#emp-signature.form-check-input(type='checkbox' name='Emp_Signature' value=1)
+            .col
+                label(for='emp-date-signed') today&apos;s date:
+                input#emp-date-signed.form-control(type='text' name='Emp_Signed_Date' placeholder='yyyy-mm-dd')
+        .row
+            .col
+                label(for='date-received-on') Notification of injury received on:
+                input#date-received-on.form-control(type='text' name='Notification_Date' placeholder='date received by employer representative')
+        .row
+            .col
+                label(for='report-received-by') Notification of injury received by:
+                input#report-received-by.form-control(type='text' name='Who_Received' placeholder='representative name')
+        .row
+            .col
+                | Signature:
+                .form-check.form-check-inline
+                    input#representative-signature.form-check-input(type='checkbox' name='Receivee_Signed' value=1)
+    .form-group.clear-submit-buttons
+        button.btn.btn-secondary.button-spaced(type='button') Clear
+        button.btn.btn-primary.button-spaced(type='submit') Submit

@@ -1,0 +1,21 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Login
+    link(rel='stylesheet' href='css/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet' href='css/Login.css')
+    script(src='js/jquery/dist/jquery.js')
+    script(src='css/bootstrap/dist/js/bootstrap.bundle.js')
+form.login-form.d-flex(action='Home' method='get')
+    .container.form-container.card
+        .row.title-row
+            h1 Login
+        .row
+            label(for='username') Username
+            input#username.form-control(type='text' placeholder='username')
+        .row
+            label(for='password') Password
+            input#password.form-control(type='password' placeholder='password')
+        .form-group.login-cancel-buttons
+            button.btn.btn-secondary.button-spaced(type='button') Cancel
+            button.btn.btn-primary.button-spaced(type='submit') Login

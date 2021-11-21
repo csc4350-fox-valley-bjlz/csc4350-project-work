@@ -1,0 +1,11 @@
+.choose-action-container {
+    padding-top: 30vh;
+}
+
+.action-button {
+    height: 10vh;
+    width: 30vw;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}

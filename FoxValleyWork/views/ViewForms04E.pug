@@ -1,0 +1,54 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title View Forms 04E
+    link(rel='stylesheet' href='css/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet' href='css/ViewFormsGeneral.css')
+    script(src='js/jquery/dist/jquery.js')
+    script(src='css/bootstrap/dist/js/bootstrap.bundle.js')
+
+form(action='ViewFormsSelection' method='get').d-flex.justify-content-center
+    button.btn.btn-lg.btn-primary.action-button(type='submit' ) Go Back to View Forms
+
+table( style="width:100%;", border="1" )
+    //thead.thead-light
+    //    tr
+    //        th(scope='col') Program
+    //        th(scope='col') First
+    //        th(scope='col') Last
+    //        th(scope='col') Form
+    -var keys = Object.keys(data[0])
+    -console.log(data)
+    -console.log(keys)
+        tr
+            th viewFormButton
+            each met in keys
+                th=met
+    each row in data
+        tr
+            td
+                form(action='updateForm04E' method='post').d-flex.justify-content-center
+                    button.btn.btn-lg.btn-primary.action-button(type='submit' name='form04Eid' value=`${row.form04EID}` id=`${row.form04EID}` ) view form
+                form(action='deleteForm04E' method='post').d-flex.justify-content-center
+                    button.btn.btn-lg.btn-primary.action-button(type='submit' name='form04EidDelete' value=`${row.form04EID}` id=`${row.form04EID}Delete` ) Delete form
+            td=row.form04EID
+            td=row.Emp_Name
+            td=row.Incident_Date
+            td=row.Incident_Time
+            td=row.Incident_Location_Specific
+            td=row.Incident_First_Report
+            td=row.First_Report_Date
+            td=row.First_Report_Who
+            td=row.How_Incident_Occurred_Description
+            td=row.Incident_witnesses
+            td=row.Body_Parts_Injured
+            td=row.Medical_Attention_on_Incident_Date
+            td=row.Where_Treatment
+            td=row.Injured_Part_Previously
+            td=row.Described_Prev_Injury
+            td=row.Where_Prev_Injury_Treated
+            td=row.Emp_Signature
+            td=row.Emp_Signed_Date
+            td=row.Notification_Date
+            td=row.Who_Received
+            td=row.Receivee_Signed

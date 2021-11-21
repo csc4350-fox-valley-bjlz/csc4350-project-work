@@ -1,0 +1,333 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Employee Injury Report
+    link(rel='stylesheet' href='css/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet' href='css/PDRMA_Form_04_Employee_Injury_Report.css')
+    script(src='js/form_04_read_to_object.js')
+    //onsubmit='return formSubmission();'
+form#pdrma-form-04(action='finalUpdateForm04' method='post')
+    .container.pdrma-form-04-title
+        h1#pdrma-form-04-title PDRMA Form O4
+    br
+    br
+    .form-group
+        .row
+            .col
+                p Delete all info in date fields after the yyyy-mm-dd BEFORE submitting
+    .form-group
+        .row
+            .col
+                label(for='Form04ID') form id
+                input#Form04ID.form-control(type='text' style='line-clamp:10' name='Form04ID' value=data[0].Form04ID)
+    .form-group
+        .row
+            .col
+                label(for='agency-name') Agency Name
+                input#agency-name.form-control(type='text' name='Agency_Name' value='Fox Valley Special' placeholder='Fox Valley Special Recreation Association')
+            .col
+                label(for='todays-date') Today&apos;s date
+                input#todays-date.form-control(type='text' maxlength=10 name='Todays_Date' value=data[0].Todays_Date placeholder='yyyy-mm-dd')
+    .form-group
+        .row
+            .col
+                label(for='date-of-incident') Date of Incident
+                input#date-of-incident.form-control(type='text' maxlength=10 name='Date_of_Incident' value=data[0].Date_of_Incident placeholder='yyyy-mm-dd')
+            .col
+                label(for='time-of-incident') Time of Incident
+                input#time-of-incident.form-control(type='text' name='Time_of_Incident' value=data[0].Time_of_Incident placeholder='00:00 - 24:60')
+    .form-group
+        .row
+            .col
+                label(for='name-of-person-completing-report') Name of person completing report
+                input#name-of-person-completing-report.form-control(type='text' value=data[0].Form_Completer_Name name='Form_Completer_Name')
+            .col
+                label(for='title-of-person-completing-report') Title of person completing report
+                input#title-of-person-completing-report.form-control(type='text' value=data[0].Form_Completer_Title name='Form_Completer_Title')
+    .form-group
+        .row
+            .col
+                label(for='business-phone-number') Business Phone Number
+                input#business-phone-number.form-control(type='text' name='Form_Completer_Phone' value=data[0].Form_Completer_Phone placeholder='630.907.1114')
+            .col
+                label(for='business-email') Business Email
+                input#business-email.form-control(type='text' name='Form_Completer_Email' value=data[0].Form_Completer_Email placeholder='jasonp@fvsra.org')
+    .form-group
+        label(for='how-did-incident-occur') How did the incident occur?
+        textarea#how-did-incident-occur.form-control(name='How_Incident_Occurred_Short' value=data[0].How_Incident_Occurred_Short cols='30' rows='10' placeholder='Provide a brief, factual description, do not speculate on fault, etc.')
+    .form-group
+        label(for='name-of-location') Name of the location or nearest intersection where the incident occurred
+        input#name-of-location.form-control(type='text' value=data[0].Incident_Location_Name name='Incident_Location_Name')
+    .form-group
+        .row
+            //.col
+            //    p Is there an address for this location? If yes, please provide the following:
+            //.col
+            //    .form-check.form-check-inline
+            //        label.form-check-label(for='address-available-yes') Yes
+            //        input#address-available-yes.form-check-input(type='radio' name='address-available-radio')
+            //    .form-check.form-check-inline
+            //        label.form-check-label(for='address-available-no') No
+            //        input#address-available-no.form-check-input(type='radio' name='address-available-radio')
+            //    .form-check.form-check-inline
+            //        label.form-check-label(for='address-available-unknown') Unknown
+            //        input#address-available-unknown.form-check-input(type='radio' name='address-available-radio')
+            .row
+                .col
+                    label(for='incident-address') Address:
+                    input#incident-address.form-control(type='text' value=data[0].Incident_Location_Address name='Incident_Location_Address')
+            .row
+                .col
+                    label(for='incident-city') city:
+                    input#incident-city.form-control(type='text' value=data[0].Incident_Location_City name='Incident_Location_City')
+                .col
+                    label(for='incident-state') state:
+                    input#incident-state.form-control(type='text' value=data[0].Incident_Location_State name='Incident_Location_State')
+                .col
+                    label(for='incident-zip') zip code:
+                    input#incident-zip.form-control(type='text' value=data[0].Incident_Location_Zip name='Incident_Location_Zip')
+        .form-group
+            label(for='specific-location') Location (Specify the exact type of location/facility where injury occurred.)
+            input#specific-location.form-control(type='text' value=data[0].Incident_Location_Specific name='Incident_Location_Specific' placeholder='Ex. maintenance garage, sports field, aquatic outdoor, golf course, etc')
+        .form-group
+            label(for='primary-location')
+                | Primary location (Specify exact location. Ex. lap pool, cart storage, classroom, pavilion)
+            input#primary-location.form-control(type='text' value=data[0].Incident_Primary_Location name='Incident_Primary_Location')
+        .form-group
+            label(for='employer-FEIN') Employer&apos;s FEIN
+            input#employer-FEIN.form-control(type='text' value=data[0].Employer_FEIN name='Employer_FEIN')
+        .form-group
+            .row
+                .col
+                    p Did the employee miss more than (3) scheduled work days?
+                .form-check.form-check-inline.col
+                    label(for='emp-miss-3-days-y') yes
+                    input#emp-miss-3-days-y.form-check-input(type='radio' value=1 name='Employee_Miss_3_Consecutive_Days' checked=data[0].Employee_Miss_3_Consecutive_Days==1)
+                .form-check.form-check-inline.col
+                    label(for='emp-miss-3-days-n') no
+                    input#emp-miss-3-days-n.form-check-input(type='radio' value=0 name='Employee_Miss_3_Consecutive_Days' checked=data[0].Employee_Miss_3_Consecutive_Days==0)
+                .form-check.form-check-inline.col
+                    label(for='emp-miss-3-days-m') unknown
+                    input#emp-miss-3-days-m.form-check-input(type='radio' value=0 name='Employee_Miss_3_Consecutive_Days')
+        .form-group
+            label(for='what-emp-doing-during-accident') What was the employee doing when the accident occurred?
+            input#what-emp-doing-during-accident.form-control(type='text' name='What_Employee_Doing' value=data[0].What_Employee_Doing)
+        .form-group
+            label(for='how-incident-occur') How did the incident occur
+            textarea#how-incident-occur.form-control(name='How_Incident_Occurred_Detailed' value=data[0].How_Incident_Occurred_Detailed cols='30' rows='5' placeholder='(provide a detailed factual description)')
+        .row
+            .col
+                label(for='emp-last-name') Employee Last Name:
+                input#emp-last-name.form-control(type='text' value=data[0].Emp_Last_Name name='Emp_Last_Name')
+            .col
+                label(for='emp-first-name') Employee First Name:
+                input#emp-first-name.form-control(type='text' value=data[0].Emp_First_Name name='Emp_First_Name')
+        .row
+            .col
+                label(for='emp-address') Address:
+                input#emp-address.form-control(type='text' value=data[0].Emp_Address name='Emp_Address')
+        .row
+            .col
+                label(for='emp-city') city:
+                input#emp-city.form-control(type='text' value=data[0].Emp_City name='Emp_City')
+            .col
+                label(for='emp-state') state:
+                input#emp-state.form-control(type='text' value=data[0].Emp_State name='Emp_State')
+            .col
+                label(for='emp-zip') zip code:
+                input#emp-zip.form-control(type='text' value=data[0].Emp_Zip name='Emp_Zip')
+        .row
+            .col
+                label(for='emp-best-phone') Best number to contact Employee
+                input#emp-best-phone.form-control(type='text' value=data[0].Emp_Best_Contact_Number name='Emp_Best_Contact_Number')
+            .col
+                label(for='emp-email') Employee&apos;s email
+                input#emp-email.form-control(type='text' value=data[0].Emp_Email name='Emp_Email')
+        .row
+            .col
+                label(for='emp-social') Employee social security number
+                input#emp-social.form-control(type='text' value=data[0].Emp_Social name='Emp_Social' placeholder='###-##-####')
+            .col
+                label(for='emp-DoB') Employee date of birth
+                input#emp-DoB.form-control(type='text' maxlength=10 value=data[0].Emp_DoB name='Emp_DoB' placeholder='yyyy-mm-dd')
+            .col
+                p Gender:
+            .form-check.form-check-inline.col
+                label.form-check-label(for='male') Male
+                input#male.form-check-input(type='radio' value='male' name='Emp_Gender' checked=data[0].Emp_Gender=='male')
+            .form-check.form-check-inline.col
+                label.form-check-label(for='female') Female
+                input#female.form-check-input(type='radio' value='female' name='Emp_Gender' checked=data[0].Emp_Gender=='female')
+        .row
+            .col
+                label(for='emp-marital-status') Employee&apos;s marital status
+                input#emp-marital-status.form-control(type='text' value=data[0].Emp_Marital_Status name='Emp_Marital_Status' placeholder='divorced/single/married/unknown')
+            .col
+                label(for='emp-num-dependents') Number of dependents
+                input#emp-num-dependents.form-control(type='text' value=data[0].Emp_Num_Dependents name='Emp_Num_Dependents' placeholder='###')
+            .col
+                p Does Employee Speaks English:
+            .form-check.form-check-inline.col
+                label.form-check-label(for='speak-english-y') yes
+                input#speak-english-y.form-check-input(type='radio' value=1 name='Emp_Speak_English' checked=data[0].Emp_Speak_English==1)
+            .form-check.form-check-inline.col
+                label.form-check-label(for='speak-english-n') no
+                input#speak-english-n.form-check-input(type='radio' value=0 name='Emp_Speak_English' checked=data[0].Emp_Speak_English==0)
+        .row
+            .col
+                label(for='emp-avg-week-wage') Average weekly wage
+                input#emp-avg-week-wage.form-control(type='text' value=data[0].Emp_Avg_Week_Wage name='Emp_Avg_Week_Wage')
+            .col
+                label(for='emp-job-title-occupation') Employee job title/occupation
+                input#emp-job-title-occupation.form-control(type='text' value=data[0].Emp_Job name='Emp_Job')
+        .row
+            .col
+                p What is the Employee&apos;s Employment status?
+        .row
+            .form-check.form-check-inline.col
+                label.form-check-label(for='employment-status-permanent-fulltime') Permanent full-time
+                input#employment-status-permanent-fulltime.form-check-input(type='radio' value='fulltime' name='Emp_Employ_Status' checked=data[0].Emp_Employ_Status=='fulltime')
+            .form-check.form-check-inline.col
+                label.form-check-label(for='employment-status-permanent-parttime') Permanent part-time
+                input#employment-status-permanent-parttime.form-check-input(type='radio' value='parttime' name='Emp_Employ_Status' checked=data[0].Emp_Employ_Status=='parttime')
+            .form-check.form-check-inline.col
+                label.form-check-label(for='employment-status-seasonal') Seasonal
+                input#employment-status-seasonal.form-check-input(type='radio' value='seasonal' name='Emp_Employ_Status' checked=data[0].Emp_Employ_Status=='seasonal')
+            .form-check.form-check-inline.col
+                label.form-check-label(for='employment-status-intern') Intern
+                input#employment-status-intern.form-check-input(type='radio' value='intern' name='Emp_Employ_Status' checked=data[0].Emp_Employ_Status=='intern')
+            .form-check.form-check-inline.col
+                label.form-check-label(for='employment-status-other') Other
+                input#employment-status-other.form-check-input(type='radio' value='other' name='Emp_Employ_Status' checked=data[0].Emp_Employ_Status=='other')
+        .row
+            .col
+                label(for='emp-date-hired') Date Hired
+                input#emp-date-hired.form-control(type='text' maxlength=10 value=data[0].Emp_Date_Hired name='Emp_Date_Hired' placeholder='yyyy-mm-dd')
+            .col
+                .row
+                    .col
+                        p What is employee&apos;s Tenure? (length of employment)
+                .row
+                    .form-check.form-check-inline.col
+                        label.form-check-label(for='emp-tenure-less-1') < 1 yr.
+                        input#emp-tenure-less-1.form-check-input(type='radio' value='< 1 yr.' name='Emp_Tenure' checked=data[0].Emp_tenure=='< 1 yr.')
+                    .form-check.form-check-inline.col
+                        label.form-check-label(for='emp-tenure-1-3') 1-3 yrs
+                        input#emp-tenure-1-3.form-check-input(type='radio' value='1-3 yrs' name='Emp_Tenure' checked=data[0].Emp_tenure=='1-3 yrs')
+                    .form-check.form-check-inline.col
+                        label.form-check-label(for='emp-tenure-4-10') 4-10 yrs
+                        input#emp-tenure-4-10.form-check-input(type='radio' value='4-10 yrs' name='Emp_Tenure' checked=data[0].Emp_tenure=='4-10 yrs')
+                    .form-check.form-check-inline.col
+                        label.form-check-label(for='emp-tenure-11-19') 11-19 yrs
+                        input#emp-tenure-11-19.form-check-input(type='radio' value='11-19 yrs' name='Emp_Tenure' checked=data[0].Emp_tenure=='11-19 yrs')
+                    .form-check.form-check-inline.col
+                        label.form-check-label(for='emp-tenure-20-more') 20 + yrs
+                        input#emp-tenure-20-more.form-check-input(type='radio' value='20+ yrs' name='Emp_Tenure' checked=data[0].Emp_tenure=='20+ yrs')
+        .form-group
+            label(for='emp-time-began-work') Time employee began work on day of incident
+            input#emp-time-began-work.form-control(type='text' name='Emp_Time_Began_Work_Incident' value=data[0].Emp_Time_Began_Work_Incident placeholder='00:00 - 24:60')
+        .form-group
+            label(for='emp-last-date-worked') Last date employee worked prior to incident day
+            input#emp-last-date-worked.form-control(type='text' maxlength=10 name='Last_Date_Worked_Prior_Incident' value=data[0].Last_Date_Worked_Prior_Incident placeholder='yyyy-mm-dd')
+        .form-group
+            label(for='emp-death-date') If employee died as a result of the accident, please provide a date of death
+            input#emp-death-date.form-control(type='text' maxlength=10 name='Emp_Incident_Date_Death' value=data[0].Emp_Incident_Date_Death placeholder='yyyy-mm-dd')
+    .form-group
+        .row
+            .col
+                p Did the incident occur on agency premices?
+            .form-check.form-check-inline.col
+                label(for='incident-occur-on-premise-y') yes
+                input#incident-occur-on-premise-y.form-check-input(type='radio' value=1 name='Incident_Occur_on_Premices' checked=data[0].Incident_Occur_on_Premices==1)
+            .form-check.form-check-inline.col
+                label(for='incident-occur-on-premise-n') no
+                input#incident-occur-on-premise-n.form-check-input(type='radio' value=0 name='Incident_Occur_on_Premices' checked=data[0].Incident_Occur_on_Premices==0)
+            .form-check.form-check-inline.col
+                label(for='incident-occur-on-premise-u') unknown
+                input#incident-occur-on-premise-u.form-check-input(type='radio' value=0 name='Incident_Occur_on_Premices')
+        .row
+            .col
+                p Injury of Illness?
+            .form-check.form-check-inline.col
+                label(for='injury-checked') Injury
+                input#injury-checked.form-check-input(type='radio' value='injury' name='Injury_or_Illness' checked=data[0].Injury_or_Illness=='injury')
+            .form-check.form-check-inline.col
+                label(for='illness-checked') Illness
+                input#illness-checked.form-check-input(type='radio' value='illness' name='Injury_or_Illness' checked=data[0].Injury_of_Illness=='illness')
+        .form-group
+            label(for='injury-illness-description') Please describe the illness or injury
+            textarea#injury-illness-description.form-control(name='Description_of_Injury_Illness' value=data[0].Description_of_Injury_Illness cols='30' rows='5' placeholder='(affected body part and type of injury; Ex. contusion, bruise, laceration, sprain, break, etc.)')
+        .form-group
+            label(for='object-substance-of-harm') What object or substance, if any, directly harmed the Employee
+            input#object-substance-of-harm.form-control(type='text' name='Object_Substance_of_Harm' value=data[0].Object_Substance_of_Harm placeholder='if none type none')
+        .row
+            .col
+                p Did the employee seek medical attention?
+            .form-check.form-check-inline.col
+                label(for='emp-sought-medical-y') yes
+                input#emp-sought-medical-y.form-check-input(type='radio' value=1 name='Emp_Seek_Medical_Attention' checked=data[0].Emp_Seek_Medical_Attention==1)
+            .form-check.form-check-inline.col
+                label(for='emp-sought-medical-n') no
+                input#emp-sought-medical-n.form-check-input(type='radio' value=0 name='Emp_Seek_Medical_Attention' checked=data[0].Emp_Seek_Medical_Attention==0)
+            .form-check.form-check-inline.col
+                label(for='emp-sought-medical-u') unknown
+                input#emp-sought-medical-u.form-check-input(type='radio' value=0 name='Emp_Seek_Medical_Attention')
+        .row
+            .col
+                p If yes, was the treatment given away from the worksite?
+            .form-check.form-check-inline.col
+                label(for='treatment-away-y') yes
+                input#treatment-away-y.form-check-input(type='radio' value=1 name='Treated_Away_From_Worksite' checked=data[0].Treated_Away_From_Worksite==1)
+            .form-check.form-check-inline.col
+                label(for='treatment-away-n') no
+                input#treatment-away-n.form-check-input(type='radio' value=0 name='Treated_Away_From_Worksite' checked=data[0].Treated_Away_From_Worksite==0)
+            .form-check.form-check-inline.col
+                label(for='treatment-away-u') unknown
+                input#treatment-away-u.form-check-input(type='radio' value=0 name='Treated_Away_From_Worksite')
+        .row
+            .col
+                p Was employee treated in an emergency room?
+            .form-check.form-check-inline.col
+                label(for='emergency-room-y') yes
+                input#emergency-room-y.form-check-input(type='radio' value=1 name='Treated_in_ER' checked=data[0].Treated_in_ER==1)
+            .form-check.form-check-inline.col
+                label(for='emergency-room-n') no
+                input#emergency-room-n.form-check-input(type='radio' value=0 name='Treated_in_ER' checked=data[0].Treated_in_ER==0)
+            .form-check.form-check-inline.col
+                label(for='emergency-room-u') unknown
+                input#emergency-room-u.form-check-input(type='radio' value=0 name='Treated_in_ER')
+        .row
+            .col
+                p Was employee treated overnight as an outpatient?
+            .form-check.form-check-inline.col
+                label(for='outpatient-overnight-y') yes
+                input#outpatient-overnight-y.form-check-input(type='radio' value=1 name='Hospitalized_Overnight' checked=data[0].Hospitalized_Overnight==1)
+            .form-check.form-check-inline.col
+                label(for='outpatient-overnight-n') no
+                input#outpatient-overnight-n.form-check-input(type='radio' value=0 name='Hospitalized_Overnight' checcked=data[0].Hospitalized_Overnight==0)
+            .form-check.form-check-inline.col
+                label(for='outpatient-overnight-u') unknown
+                input#outpatient-overnight-u.form-check-input(type='radio' value=0 name='Hospitalized_Overnight')
+        .form-group
+            label(for='treater-room-name') Name of treating physician, health care provider, or emergency room
+            input#treater-room-name.form-control(type='text' value=data[0].Doc_Name name='Doc_Name')
+        .form-group
+            label(for='treater-room-address') Address
+            input#treater-room-address.form-control(type='text' value=data[0].Doc_Address name='Doc_Address')
+        .form-group
+            .row
+                .col
+                    label(for='treater-room-city') City
+                    input#treater-room-city.form-control(type='text' value=data[0].Doc_City name='Doc_City')
+                .col
+                    label(for='treater-room-state') State
+                    input#treater-room-state.form-control(type='text' value=data[0].Doc_State name='Doc_State')
+                .col
+                    label(for='treater-room-zip') zip code
+                    input#treater-room-zip.form-control(type='text' value=data[0].Doc_Zip name='Doc_Zip')
+                .col
+                    label(for='treater-room-phone') Phone Number
+                    input#treater-room-phone.form-control(type='text' value=data[0].Doc_Phone name='Doc_Phone')
+    .form-group.clear-submit-buttons
+        button.btn.btn-secondary.button-spaced(type='button') Clear
+        button.btn.btn-primary.button-spaced(type='submit') Submit
